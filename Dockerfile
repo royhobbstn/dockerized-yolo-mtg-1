@@ -21,13 +21,13 @@ RUN git clone https://github.com/komorin0521/darknet_server.git && \
     wget https://s3-us-west-2.amazonaws.com/mtg-ml-test-1/obj.data && \
     wget https://s3-us-west-2.amazonaws.com/mtg-ml-test-1/obj.names
     
-RUN cd / && \
+RUN cd ~ && \
     cp -r darknet_server/* darknet/python
     
-RUN cd /darknet/python && \
+RUN cd ~/darknet/python && \
     pip3 install -r requirements.txt && \
     apt-get install -y libopencv-dev
 
-RUN cd /darknet && make
+RUN cd ~/darknet && make
 
-CMD cd /darknet && PYTHONPATH=/darknet/python python3 /darknet/python/darknet_server.py -cf /darknet/cfg/yolo-obj.cfg -df /darknet/cfg/obj.data -wf /darknet/yolo-obj_1000.weights -ud /darknet/python/upload -pf false
+CMD cd ~/darknet && PYTHONPATH=~/darknet/python python3 ~/darknet/python/darknet_server.py -cf ~/darknet/cfg/yolo-obj.cfg -df ~/darknet/cfg/obj.data -wf ~/darknet/yolo-obj_1000.weights -ud ~/darknet/python/upload -pf false
