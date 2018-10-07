@@ -21,8 +21,7 @@ RUN git clone https://github.com/komorin0521/darknet_server.git && \
     wget https://s3-us-west-2.amazonaws.com/mtg-ml-test-1/obj.data && \
     wget https://s3-us-west-2.amazonaws.com/mtg-ml-test-1/obj.names
     
-RUN cd ~ && \
-    cp -r darknet_server/* darknet/python
+RUN cp -r ~/darknet_server/* ~/darknet/python
     
 RUN cd ~/darknet/python && \
     pip3 install -r requirements.txt && \
