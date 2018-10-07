@@ -31,4 +31,4 @@ RUN cd ~/darknet && make
 
 EXPOSE 8080
 
-CMD cd ~/darknet && PYTHONPATH=~/darknet/python python3 ~/darknet/python/darknet_server.py -cf ~/darknet/cfg/yolo-obj.cfg -df ~/darknet/cfg/obj.data -wf ~/darknet/yolo-obj_1000.weights -ud ~/darknet/python/upload -pf false
+CMD cd ~/darknet && PYTHONPATH=~/darknet/python python3 ~/darknet/python/darknet_server.py -cf ~/darknet/cfg/yolo-obj.cfg -df ~/darknet/cfg/obj.data -wf ~/darknet/yolo-obj_1000.weights -ud ~/darknet/python/upload -pf false -H 0.0.0.0
